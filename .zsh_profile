@@ -1,0 +1,68 @@
+alias lg="lazygit"
+alias vi="nvim"
+
+alias li="ls -al"
+alias raise="sudo apt update && sudo apt upgrade"
+alias conl="conda env list | awk '{print \$1}' | sed '1d' | fzf"
+alias cona="conda activate \$(conl)"
+alias cond="conda deactivate"
+
+alias config="cd ~/.config/"
+alias confshell="nvim ~/.zshrc"
+alias labs="cd ~/labs/"
+alias tmp="cd ~/tmp/"
+alias repos="cd ~/repos/"
+
+bindkey -s ^f "tmux-sessionizer\n"
+
+cdf() {
+    # Define directories to exclude
+    local exclude_dirs=("node_modules" ".venv" ".git")
+
+    # Initialize the exclude string
+    local exclude_str=""
+
+    # Build the exclude string using a loop
+    for dir in "${exclude_dirs[@]}"; do
+        exclude_str+=" -path \"*/$dir/*\" -o"
+    done
+
+    # Remove the last "-o" from exclude_str
+    exclude_str="${exclude_str%-o}"
+
+    # Find directories in home directory excluding specified directories
+    local directories=$(eval "find \"$HOME\" -type d \( ! \( $exclude_str \) \) -print 2>/dev/null" | fzf)
+
+    # Change directory if selection is made
+    if [ -n "$directories" ]; then
+        cd "$directories" || return 1
+    fi
+}
+
+vif() {
+    local selected_file=$(fzf)
+    if [ $? -eq 0 ]; then
+        echo "$selected_file" | xargs nvim
+    fi
+}
+
+cdt() {
+    local exclude_dirs=("node_modules" ".venv")
+    local selected_dir
+
+    local find_args=()
+    for dir in "${exclude_dirs[@]}"; do
+        exclude_args+=("-path" "*$dir*")
+    done
+
+    selected_dir=$(find "$HOME" -type d ${find_args[@]} | sed "s|$HOME/||" | fzf)
+    
+    local current_session_id=$(tmux display-message -p '#S')
+    local new_session_id=$((current_session_id + 1))
+    
+
+    if [ -n "$selected_dir" ]; then
+        tmux new-session -d -c "$HOME/$selected_dir" -s "$new_session_id" &&
+        tmux switch-client -t "$new_session_id"
+    fi
+}

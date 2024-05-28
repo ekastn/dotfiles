@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+if [[ $# -eq 1 ]]; then
+    base_dir=$1
+else
+    base_dir=$(pwd)
+fi
+
+# find "$base_dir" -type d -name .git -prune -o -type d -exec test -e '{}/.git' ';' -print
+
+find "$base_dir" -type d -exec test -e '{}/.git' \; -print
