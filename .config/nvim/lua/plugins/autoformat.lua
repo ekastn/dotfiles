@@ -9,8 +9,9 @@ return {
 			-- },
 			formatters_by_ft = {
 				lua = { "stylua" },
-				c = { "clangd" },
+				c = { "clang-format" },
 				cpp = { "clangd" },
+				go = { "gofumpt", "goimports-reviser" },
 				python = { "isort", "black" },
 				typescript = { { "prettierd", "prettier" } },
 				javascript = { { "prettierd", "prettier" } },

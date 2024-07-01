@@ -54,7 +54,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 
 -- yank to clipboard
-vim.opt.clipboard = "unnamedplus"
+-- vim.opt.clipboard = "unnamedplus"
 
 -- Tab configuration
 vim.o.tabstop = 4

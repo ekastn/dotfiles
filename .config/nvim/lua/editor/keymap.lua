@@ -1,8 +1,7 @@
 --  See `:help vim.keymap.set()`
 
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode with jk" })
-vim.keymap.set("v", "<leader>cc", "\"*y", { desc = "Copy text to clipboard" })
-vim.keymap.set("n", "<leader>cp", "\"*y", { desc = "Paste text from clipboard" })
+vim.keymap.set({ "v", "n" }, "<leader>cb", "\"+", { desc = "Access system clipboard" })
 
 -- Move selected line up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
