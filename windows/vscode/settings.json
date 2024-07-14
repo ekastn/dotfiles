@@ -1,0 +1,247 @@
+{
+    "window.restoreWindows": "none",
+    "explorer.confirmDragAndDrop": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.linkedEditing": true,
+    "explorer.compactFolders": true,
+    "window.menuBarVisibility": "toggle",
+
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.sideBar.location": "right",
+    "workbench.startupEditor": "none",
+    "workbench.editor.showTabs": "single",
+    "workbench.editor.labelFormat": "short",
+
+    "editor.tabSize": 4,
+    "editor.indentSize": "tabSize",
+    "editor.fontSize": 14,
+    "editor.fontFamily": "MesloLGM Nerd Font,Consolas, 'Courier New', monospace",
+    "editor.rulers": [100],
+    "editor.renderWhitespace": "none",
+    "editor.renderControlCharacters": false,
+    "editor.minimap.enabled": false,
+    "editor.scrollbar.vertical": "auto",
+    "editor.stickyScroll.enabled": false,
+
+    "zenMode.hideLineNumbers": false,
+    "zenMode.showTabs": "single",
+
+    "terminal.integrated.fontSize": 14,
+    "debug.console.fontSize": 12,
+    "window.commandCenter": false,
+
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.filePath": "on",
+
+    "workbench.activityBar.location": "hidden",
+
+    "python.analysis.typeCheckingMode": "basic",
+    "emmet.triggerExpansionOnTab": true,
+
+    "prettier.tabWidth": 4,
+    "prettier.endOfLine": "auto",
+    "prettier.printWidth": 100,
+
+    "liveServer.settings.NoBrowser": true,
+
+    "accessibility.signals.lineHasError": {
+        "sound": "off"
+    },
+
+    "svelte.enable-ts-plugin": true,
+
+    "codesnap.showWindowTitle": false,
+    "codesnap.containerPadding": "0",
+    "codesnap.showWindowControls": false,
+
+    "vim.leader": "<Space>",
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.smartRelativeLine": true,
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.color": "rgba(240, 230, 140, 0.5)",
+    "vim.highlightedyank.duration": 150,
+    "vim.insertModeKeyBindings": [{ "before": ["j", "k"], "after": ["<Esc>"] }],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        { "before": ["j"], "after": ["g", "j"] },
+        { "before": ["k"], "after": ["g", "k"] },
+
+        { "before": ["<Esc>"], "commands": [":nohlsearch"] },
+
+        { "before": ["<S-h>"], "commands": [":bprevious"] },
+        { "before": ["<S-l>"], "commands": [":bnext"] },
+
+        { "before": ["<leader>", "v"], "commands": ["workbench.action.splitEditorDown"] },
+        { "before": ["<leader>", "s"], "commands": ["workbench.action.splitEditorRight"] },
+
+        {
+            "before": ["leader", "s", "e"],
+            "commands": ["workbench.action.showEmmetCommands"] // show emmet commands
+        },
+
+        {
+            "before": ["<C-h>"],
+            "commands": ["workbench.action.focusLeftGroup"]
+        },
+        {
+            "before": ["<C-l>"],
+            "commands": ["workbench.action.focusRightGroup"]
+        },
+
+        {
+            "before": ["[", "d"],
+            "commands": ["editor.action.marker.prev", "editor.action.marker.prevInFiles"]
+        },
+        {
+            "before": ["]", "d"],
+            "commands": ["editor.action.marker.next", "editor.action.marker,nextInFiles"]
+        },
+
+        { "before": ["leader", "f", "w"], "commands": [":w!"] },
+        { "before": ["leader", "f", "q"], "commands": [":q!"] },
+        {
+            "before": ["leader", "leader"],
+            "commands": ["workbench.action.quickOpenLeastRecentlyUsedEditor"]
+        },
+
+        {
+            "before": ["leader", "f", "f"],
+            "commands": ["editor.action.formatDocument"]
+        },
+        {
+            "before": ["leader", "f", "e"],
+            "commands": ["workbench.view.explorer"]
+        },
+
+        {
+            "before": ["leader", "s", "f"],
+            "commands": ["workbench.action.quickOpen"]
+        },
+        {
+            "before": ["leader", "s", "p"],
+            "commands": ["workbench.action.showCommands"]
+        },
+
+        {
+            "before": ["<leader>", "c", "a"],
+            "commands": ["editor.action.quickFix"]
+        },
+
+        {
+            "before": ["g", "h"],
+            "commands": ["editor.action.showDefinitionPreviewHover"]
+        },
+
+        {
+            "before": ["g", "d"],
+            "commands": ["editor.action.goToDeclaration"]
+        },
+        {
+            "before": ["g", "r"],
+            "commands": ["editor.action.goToReferences"]
+        },
+        {
+            "before": ["g", "i"],
+            "commands": ["editor.action.goToImplementation"]
+        },
+        {
+            "before": ["<leader>", "D"],
+            "commands": ["editor.action.goToTypeDefinition"]
+        },
+        {
+            "before": ["<leader>", "r", "n"],
+            "commands": ["editor.action.rename"]
+        },
+        {
+            "before": ["K"],
+            "commands": ["editor.action.showHover"]
+        },
+
+        {
+            "before": ["<leader>", "v", "s"],
+            "commands": ["workbench.view.scm"]
+        },
+        {
+            "before": ["<leader>", "v", "x"],
+            "commands": ["workbench.view.extensions"]
+        },
+        {
+            "before": ["<leader>", "v", "c"],
+            "commands": ["workbench.action.closeSidebar"]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        // Stay in visual mode while indenting
+        {
+            "before": ["<"],
+            "commands": ["editor.action.outdentLines"]
+        },
+        {
+            "before": [">"],
+            "commands": ["editor.action.indentLines"]
+        },
+        // Move selected lines while staying in visual mode
+        {
+            "before": ["J"],
+            "commands": ["editor.action.moveLinesDownAction"]
+        },
+        {
+            "before": ["K"],
+            "commands": ["editor.action.moveLinesUpAction"]
+        },
+        // toggle comment selection
+        {
+            "before": ["g", "c"],
+            "commands": ["editor.action.commentLine"]
+        }
+    ],
+
+    "remote.SSH.remotePlatform": {
+        "octapi": "linux"
+    },
+
+    "godotTools.editorPath.godot4": "c:\\Users\\eka\\apps\\Godot-4-2\\Godot_v4.2.2-stable_win64.exe",
+    "godotTools.lsp.serverHost": "127.0.0.1",
+    "godotTools.lsp.serverPort": 6005,
+
+    "[gdscript]": {
+        "editor.defaultFormatter": "geequlim.godot-tools"
+    },
+
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "files.associations": {
+        "*.shader": "hlsl"
+    },
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
+
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false
+    },
+    "[html]": {
+        "editor.stickyScroll.enabled": false,
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[go]": {
+        "editor.defaultFormatter": "golang.go"
+    },
+
+    "github.copilot.editor.enableAutoCompletions": true,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "headwind.runOnSave": false,
+    "svelte.plugin.html.tagComplete.enable": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "settingsSync.ignoredSettings": ["-maven.executable.path"],
+    "gitlens.gitCommands.skipConfirmations": ["fetch:command"]
+}
