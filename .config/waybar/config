@@ -1,0 +1,62 @@
+{
+    "layer": "top",
+    "height": 30,
+    "spacing": 5,
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "backlight",
+        "network",
+        "tray",
+        "clock",
+        "custom/power"
+    ],
+    "hyprland/window": {
+        "separate-outputs": true
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "on-click": "activate"
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "{:%A, %B %d, %Y}",
+        "format": "{:%H:%M}"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": "󰤨",
+        "format-disconnected": "󰤭",
+        "tooltip-format": "Connected to {essid}",
+        "on-click": "$HOME/scripts/network"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}",
+        "format-muted": "󰖁",
+        "format-icons": {
+            "default": ["", "", "󰕾"]
+        },
+        "tooltip-format": "{volume}% volume"
+    },
+    "custom/power": {
+        "format": "󰐥",
+        "on-click": "$HOME/scripts/powermenu"
+    }
+}
+
+// vim: ft=jsonc
