@@ -1,10 +1,11 @@
-#!/usr/bin/bash
+#!/bin/sh
 
 if [[ $# -eq 1 ]]; then
-    selected=$1
+    selected=$(pwd $1)
 else
-    selected=$(find ~/ ~/labs ~/www ~/repos ~/webdev ~/p5 ~/test ~/lessons -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/ ~/labs ~/dev ~/repos -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
+
 
 if [[ -z $selected ]]; then
     exit 0
@@ -14,12 +15,16 @@ selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]]; then
-    tmux new-session -s $selected_name -c $selected
+    if ! tmux has-session -t=$selected_name 2> /dev/null; then
+        tmux new-session -s $selected_name -c $selected
+    else
+        tmux attach-session -t $selected_name
+    fi
     exit 0
 fi
 
 if ! tmux has-session -t=$selected_name 2> /dev/null; then
     tmux new-session -ds $selected_name -c $selected
+else
+    tmux switch-client -t $selected_name
 fi
-
-tmux switch-client -t $selected_name
