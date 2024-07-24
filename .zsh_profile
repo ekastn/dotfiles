@@ -1,8 +1,8 @@
 alias lg="lazygit"
 alias vi="nvim"
 
-alias li="ls -al"
-alias raise="sudo apt update && sudo apt upgrade"
+alias li="ls -la"
+
 alias conl="conda env list | awk '{print \$1}' | sed '1d' | fzf"
 alias cona="conda activate \$(conl)"
 alias cond="conda deactivate"
@@ -12,8 +12,9 @@ alias confshell="nvim ~/.zshrc"
 alias labs="cd ~/labs/"
 alias tmp="cd ~/tmp/"
 alias repos="cd ~/repos/"
+alias dotfiles="cd ~/dotfiles/"
 
-bindkey -s ^f "tmux-sessionizer\n"
+alias reload="source ~/.zshrc"
 
 cdf() {
     # Define directories to exclude

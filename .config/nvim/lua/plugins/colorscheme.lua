@@ -1,5 +1,6 @@
 return {
 	"marko-cerovac/material.nvim",
+	"folke/tokyonight.nvim",
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",

@@ -38,7 +38,7 @@ return {
 			},
 			actions = {
 				open_file = {
-					-- quit_on_open = true,
+					quit_on_open = true,
 					-- disable window_picker for explorer to work well with window splits
 					window_picker = {
 						enable = false,
