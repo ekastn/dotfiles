@@ -24,7 +24,7 @@ return {
 				},
 			})
 			vim.cmd.colorscheme("github_dark")
-			vim.cmd.hi("Comment gui=none")
+			-- vim.cmd.hi("Comment gui=none")
 		end,
 	},
 }

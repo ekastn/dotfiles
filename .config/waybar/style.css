@@ -30,7 +30,7 @@
 @define-color rosewater #f5e0dc;
 
 * {
-    font-family: Cantarell, Symbols Nerd Font;
+    font-family: MesloLGM Nerd Font;
     font-weight: bolder;
     font-size: 14px;
 }
@@ -142,6 +142,14 @@ button {
   color: @peach;
 }
 
+#cpu {
+  color: @peach;
+}
+
+#memory {
+  color: @maroon;
+}
+
 #pulseaudio {
   color: @mauve;
 }
@@ -159,11 +167,11 @@ button {
 }
 
 #battery {
-    color: @green;
+  color: @green;
 }
 
 #battery.warning:not(.charging) {
-    color: @red;
+  color: @red;
 }
 
 #custom-power {

@@ -10,6 +10,8 @@
         "hyprland/window"
     ],
     "modules-right": [
+        "memory",
+        "cpu",
         "pulseaudio",
         "backlight",
         "network",
@@ -29,13 +31,23 @@
         // "icon-size": 21,
         "spacing": 10
     },
+    "memory": {
+        "interval": 10,
+        // "format": " {}%"
+        "format": " {}%",
+    },
+    "cpu": {
+        "interval": 10,
+        "format": " {usage:2}%",
+        "tooltip": false
+    },
     "clock": {
         "tooltip-format": "{:%A, %B %d, %Y}",
         "format": "{:%H:%M}"
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
+        "format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "network": {
@@ -46,7 +58,7 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
+        "format": "{icon} {volume}%",
         "format-muted": "󰖁",
         "format-icons": {
             "default": ["", "", "󰕾"]
