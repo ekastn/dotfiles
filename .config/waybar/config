@@ -1,17 +1,18 @@
 {
     "layer": "top",
-    "height": 30,
-    "spacing": 5,
+    "height": 20,
+    "spacing": 3,
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "hyprland/window"
     ],
     "modules-center": [
-        "hyprland/window"
     ],
     "modules-right": [
         "memory",
         "cpu",
+        "battery",
         "pulseaudio",
         "backlight",
         "network",
@@ -49,6 +50,17 @@
         // "device": "acpi_video1",
         "format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        // "bat": "BAT2",
+        "interval": 30,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 25
     },
     "network": {
         "format-wifi": "󰤨",

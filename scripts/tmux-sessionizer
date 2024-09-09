@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$(pwd $1)
 else
-    selected=$(find ~/ ~/labs ~/dev ~/repos -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/ ~/labs ~/dev ~/repos ~/test -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 

@@ -1,0 +1,20 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding.x = 10
+padding.y = 10
+decorations = "buttonless"
+
+[font]
+normal.family = "MesloLGM Nerd Font Mono"
+normal.style = "Bold"
+size = 12
+
+[colors]
+primary.background = "#141414"
+
+[cursor]
+style.blinking = "On"
+blink_interval = 500
+blink_timeout = 10

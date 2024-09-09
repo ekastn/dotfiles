@@ -5,7 +5,7 @@
 CHOSEN=$(printf "Lock\nSuspend\nReboot\nShutdown\nLog Out" | rofi -dmenu -i -theme-str '@import "power.rasi"')
 
 case "$CHOSEN" in
-	"Lock") ~/.local/bin/lockscreen ;;
+	"Lock") ~/scripts/lockscreen ;;
 	"Suspend") systemctl suspend-then-hibernate ;;
 	"Reboot") reboot ;;
 	"Shutdown") poweroff ;;

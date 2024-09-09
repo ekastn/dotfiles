@@ -30,6 +30,8 @@ vim.opt.smartcase = true
 -- Keep signcolumn on by default
 vim.opt.signcolumn = "yes"
 
+vim.opt.colorcolumn = "100"
+
 -- Decrease update time
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
@@ -62,6 +64,9 @@ vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
 vim.o.smartindent = true
+
+vim.g.VM_silent_exit = 1
+vim.g.VM_set_statusline = 2
 
 vim.opt.wrap = false
 

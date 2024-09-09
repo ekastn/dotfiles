@@ -3,27 +3,25 @@
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode with jk" })
 vim.keymap.set({ "v", "n" }, "<leader>cb", "\"+", { desc = "Access system clipboard" })
 
--- Move selected line up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "J", "mzJ'z")
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
--- Move line bellow to the same line but not moving the curson
-vim.keymap.set("n", "J", "mzJ'z")
-
 -- Move to new tmux session with specific dir
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
-
-vim.keymap.set("n", "j", "gj")
-vim.keymap.set("n", "k", "gk")
-
 vim.keymap.set("n", "H", "<cmd>bprev<CR>")
 vim.keymap.set("n", "L", "<cmd>bnext<CR>")
+
+vim.keymap.set("n", "<M-;>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<M-,>", "<cmd>cprev<CR>zz")
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
@@ -31,8 +29,8 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagn
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>qq", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
-vim.keymap.set("n", "<leader>fw", "<cmd>w<CR>", { desc = "Write file" })
-vim.keymap.set("n", "<leader>fq", "<cmd>q!<CR>", { desc = "Close file" })
+vim.keymap.set("n", "<leader>bw", "<cmd>w<CR>", { desc = "Write file" })
+vim.keymap.set("n", "<leader>bq", "<cmd>q!<CR>", { desc = "Close file" })
 
 vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>", { desc = "Goto next quickfix list" })
 vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>", { desc = "Goto previous quickfix list" })

@@ -1,6 +1,6 @@
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/.local/bin:/usr/local/bin:/usr/local/go/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/go/bin:/usr/local/bin:/usr/local/go/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -102,6 +102,12 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source ~/.zsh_profile
+
+autoload -U compinit
+compinit -i
+
+eval $(thefuck --alias)
+source <(fzf --zsh)
 
 bindkey -s ^f "tmux-sessionizer\n"
 

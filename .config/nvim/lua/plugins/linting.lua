@@ -10,7 +10,6 @@ return {
 				javascript = { "eslint" },
 				typescriptreact = { "eslint" },
 				javascriptreact = { "eslint" },
-				svelte = { "eslint" },
 			}
 
 			local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
@@ -21,7 +20,7 @@ return {
 				end,
 			})
 
-			vim.keymap.set("n", "<leader>fl", function()
+			vim.keymap.set("n", "<leader>vl", function()
 				require("lint").try_lint()
 			end, { desc = "Trigger linting for current file" })
 		end,

@@ -50,14 +50,8 @@ return {
 			git = { ignore = false },
 		})
 
-		vim.keymap.set("n", "<leader>fe", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
-		vim.keymap.set(
-			"n",
-			"<leader>fc",
-			"<cmd>NvimTreeFindFileToggle<CR>",
-			{ desc = "Toggle file explorer on current file" }
+		vim.keymap.set("n", "<M-e>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+		vim.keymap.set( "n", "<M-E>", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" }
 		)
-		vim.keymap.set("n", "<leader>fj", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })
-		vim.keymap.set("n", "<leader>fr", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })
 	end,
 }

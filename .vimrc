@@ -26,4 +26,3 @@ set hlsearch
 nnoremap <Esc> :noh<CR>
 inoremap jk <Esc>
 
-let g:netrw_liststyle = 3
