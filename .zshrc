@@ -110,6 +110,7 @@ eval $(thefuck --alias)
 source <(fzf --zsh)
 
 bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^e "yy\n" # yazi
 
 export PATH="$HOME/scripts:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
