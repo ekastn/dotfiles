@@ -5,9 +5,8 @@ alias lg="lazygit"
 alias task="go-task"
 alias vi="nvim"
 alias vim="nvim"
-alias code="code --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto"
 
-alias li="ls -la"
+alias li="ls -lah"
 
 alias conl="conda env list | awk '{print \$1}' | sed '1d' | fzf"
 alias cona="conda activate \$(conl)"
@@ -29,4 +28,12 @@ function yy() {
 		builtin cd -- "$cwd"
 	fi
 	rm -f -- "$tmp"
+}
+
+function tt() {
+    local session=$(tmux list-sessions -F "#S" | fzf)
+    
+    if [[ -n $session ]]; then
+        tmux switch-client -t "$session" || tmux attach-session -t "$session"
+    fi
 }
