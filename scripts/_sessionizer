@@ -1,11 +1,10 @@
 #!/bin/sh
 
 if [[ $# -eq 1 ]]; then
-    selected=$(pwd $1)
+    selected=$1
 else
     selected=$(find ~/ ~/labs ~/dev ~/repos ~/test -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
-
 
 if [[ -z $selected ]]; then
     exit 0

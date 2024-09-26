@@ -15,7 +15,7 @@
         "battery",
         "pulseaudio",
         "backlight",
-        "network",
+        // "network",
         "tray",
         "clock",
         "custom/power"
@@ -29,7 +29,7 @@
         "on-click": "activate"
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 16,
         "spacing": 10
     },
     "memory": {
