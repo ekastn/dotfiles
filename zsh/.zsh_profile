@@ -1,0 +1,49 @@
+export EDITOR="nvim"
+export TERMINAL="kitty"
+
+alias lg="lazygit"
+alias task="go-task"
+alias vi="nvim"
+alias vim="nvim"
+
+alias li="ls -laFh"
+
+alias conl="conda env list | awk '{print \$1}' | sed '1d' | fzf"
+alias cona="conda activate \$(conl)"
+alias cond="conda deactivate"
+
+alias config="cd ~/.config/"
+alias confshell="nvim ~/.zshrc"
+alias labs="cd ~/labs/"
+alias tmp="cd ~/tmp/"
+alias repos="cd ~/repos/"
+alias dotfiles="cd ~/dotfiles/"
+
+alias reload="source ~/.zshrc"
+
+bindkey -s ^f "_sessionizer\n"
+bindkey -s ^e "yy\n" # yazi
+bindkey -s ^t "yy\n" # yazi
+bindkey -s ^h "_sessionizer $HOME\n" # yazi
+
+export PATH="$HOME/dotfiles/scripts:$PATH"
+export PATH="$HOME/build/Odin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.nimble/bin:$PATH"
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+function tt() {
+    local session=$(tmux list-sessions -F "#S" | fzf)
+    
+    if [[ -n $session ]]; then
+        tmux switch-client -t "$session" || tmux attach-session -t "$session"
+    fi
+}

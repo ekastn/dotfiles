@@ -1,9 +1,22 @@
-#!/bin/sh
+#!/bin/bash
+
+DIRS=(
+    ~/ 
+    ~/Documents/ 
+    ~/personal 
+    ~/personal/studs 
+    ~/personal/labs 
+    ~/personal/dev 
+    ~/personal/repos
+    ~/Public
+    ~/Public/repos
+)
 
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/ ~/labs ~/dev ~/repos ~/test -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find "${DIRS[@]}" -mindepth 1 -maxdepth 1 -type d | fzf)
+
 fi
 
 if [[ -z $selected ]]; then
