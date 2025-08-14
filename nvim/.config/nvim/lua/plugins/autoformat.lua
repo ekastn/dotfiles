@@ -22,12 +22,13 @@ return {
                 json = { "prettier" },
                 markdown = { "prettier" },
                 tex = { "latexindent" },
+                php = { "pint" },
             },
         },
         vim.keymap.set({ "n", "v" }, "<leader>ff", function()
             require("conform").format {
                 lsp_fallback = true,
-                async = false,
+                async = true,
                 timeout_ms = 1000,
             }
         end, { desc = "Format file or range (in visual mode)" }),
