@@ -101,6 +101,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+set -o vi
+
 source ~/.zsh_profile
 source ~/.zsh_personal
 
@@ -120,3 +122,19 @@ eval "$(pyenv init - zsh)"
 . "$HOME/.atuin/bin/env"
 
 eval "$(atuin init zsh --disable-up-arrow)"
+
+eval "$(task --completion zsh)"
+
+# bun completions
+[ -s "/home/fzymorn/.bun/_bun" ] && source "/home/fzymorn/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# opencode
+export PATH=/home/fzymorn/.opencode/bin:$PATH
+
+# >>> oh-my-opencode-slim background subagents >>>
+export OPENCODE_EXPERIMENTAL_BACKGROUND_SUBAGENTS=true
+# <<< oh-my-opencode-slim background subagents <<<

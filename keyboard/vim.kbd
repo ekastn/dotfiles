@@ -1,0 +1,19 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  ralt h j k l
+)
+
+(deflayer base
+  @arrow-layer h j k l
+)
+
+(deflayer arrow-layer
+  _ left down up right
+)
+
+(defalias
+  arrow-layer (layer-while-held arrow-layer)
+)

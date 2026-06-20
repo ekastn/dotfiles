@@ -4,7 +4,7 @@ export EDITOR="nvim"
 export TERMINAL="ghostty"
 
 alias lg="lazygit"
-alias task="go-task"
+alias ld="lazydocker"
 alias vi="nvim"
 alias vim="nvim"
 
@@ -30,8 +30,14 @@ bindkey -s ^h "_sessionizer $HOME\n" # yazi
 
 export PATH="$HOME/dotfiles/scripts:$PATH"
 export PATH="$HOME/build/Odin:$PATH"
+export PATH="$HOME/build/flutter/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.nimble/bin:$PATH"
+export PATH="$HOME/.pub-cache/bin:$PATH"
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin
 
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
@@ -49,3 +55,9 @@ function tt() {
         tmux switch-client -t "$session" || tmux attach-session -t "$session"
     fi
 }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/fzymorn/build/google-cloud-sdk/path.zsh.inc' ]; then . '/home/fzymorn/build/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/fzymorn/build/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/fzymorn/build/google-cloud-sdk/completion.zsh.inc'; fi

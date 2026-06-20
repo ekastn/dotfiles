@@ -1,0 +1,83 @@
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defvar
+  tap-time      200
+  hold-time     200
+  
+  tt-layer      200
+  ht-layer      200
+ 
+  m-interval    10    ;; Update setiap 10ms
+  m-dist        15    ;; Gerak 15px per update
+  
+  s-interval    50
+  s-dist        120
+)
+
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+(defalias
+  meh  (multi ctl alt sft)
+  tmeh (tap-hold $tap-time $hold-time spc @meh)
+
+  cpy (tap-hold $tap-time $hold-time c (multi lctl c))
+  pst (tap-hold $tap-time $hold-time v (multi lctl lsft v))
+
+  a (tap-hold $tap-time $hold-time a lmet)
+  s (tap-hold $tap-time $hold-time s lalt)
+  d (tap-hold $tap-time $hold-time d lsft) 
+  f (tap-hold $tap-time $hold-time f lctl)
+  
+  j_mod (tap-hold 180 $hold-time j rctl)
+  k_mod (tap-hold 180 $hold-time k rsft)
+  l_mod (tap-hold 180 $hold-time l ralt)
+  ;_mod (tap-hold 180 $hold-time ; rmet) ;; Nama variabel gak boleh depannya ;
+
+  j (tap-dance $tap-time ( @j_mod j ))
+  k (tap-dance $tap-time ( @k_mod k ))
+  l (tap-dance $tap-time ( @l_mod l ))
+  ; (tap-dance $tap-time ( (tap-hold $tap-time $hold-time ; rmet) ; ))
+
+  lmotion (tap-hold $tt-layer $ht-layer caps (layer-toggle motion))
+  lnumber (tap-hold $tt-layer $ht-layer lsft (layer-toggle number))
+
+  m_u   (movemouse-up    $m-interval $m-dist)
+  m_d   (movemouse-down  $m-interval $m-dist)
+  m_l   (movemouse-left  $m-interval $m-dist)
+  m_r   (movemouse-right $m-interval $m-dist)
+  
+  mwu   (mwheel-up   $s-interval $s-dist)
+  mwd   (mwheel-down $s-interval $s-dist)
+)
+
+(deflayer base
+  grv      1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab      q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @lmotion @a   @s   @d   @f   g    h    @j   @k   @l   @;   '    ret
+  lsft     z    x    @cpy @pst b    n    m    ,    .    /    rsft
+  lctl     lmet lalt           spc       ralt rmet rctl
+)
+
+(deflayer motion
+  grv  vold volu mute prev pp   next brdn brup 9    0    -    =    bspc
+  tab  mlft @m_u mrgt @mwu t    home pgdn pgup end  p    [    ]    \
+  esc  @m_l @m_d @m_r @mwd g    lft  down up   rght ;    '    ret
+  lsft z    x    mmid v    b    bspc del  ,    .    /    rsft
+  lctl lmet lalt           XX             ralt rmet rctl
+)
+
+(deflayer number
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  XX   bspc S-9  S-0  =    t    y    7    8    9    p    [    ]    \
+  lctl /    S-8  -    S-=  g    h    4    5    6    0    '    ret
+  lsft z    x    c    v    b    n    1    2    3    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
