@@ -1,3 +1,53 @@
 
 -- Check if we need to reload the file when it changed
 -- vim.api.nvim_create_autocmd({ "CursorHold", "BufEnter" }, { command = "checktime" })
+
+-- local idle_timer = nil
+-- local idle_time_ms = 3000 -- 3 seconds (change to 60000 for 1 minute)
+-- local has_spawned = false
+-- 
+-- local function close_screensaver()
+--   if has_spawned then
+--     vim.fn.jobstart({ "tmux", "kill-window", "-t", "boo" }, { detach = true })
+--     has_spawned = false
+--   end
+-- end
+-- 
+-- local function start_idle_timer()
+--   -- Close screensaver on any activity
+--   close_screensaver()
+-- 
+--   if idle_timer then
+--     idle_timer:stop()
+--     if not idle_timer:is_closing() then
+--       idle_timer:close()
+--     end
+--   end
+-- 
+--   idle_timer = (vim.uv or vim.loop).new_timer()
+--   idle_timer:start(idle_time_ms, 0, vim.schedule_wrap(function()
+--     -- Only run if we are inside a tmux session
+--     if vim.env.TMUX then
+--       vim.fn.jobstart({ "tmux", "new-window", "-n", "boo", "ghostty +boo" }, { detach = true })
+--       has_spawned = true
+--     end
+--   end))
+-- end
+-- 
+-- -- Reset/dismiss screensaver on user activity or when focus returns
+-- vim.api.nvim_create_autocmd({
+--   "CursorMovedI",
+--   "CursorMoved",
+--   "TextChanged",
+--   "TextChangedI",
+--   "BufWritePost",
+--   "BufReadPost",
+--   "FocusGained",
+-- }, {
+--   group = vim.api.nvim_create_augroup("GhosttyIdle", { clear = true }),
+--   callback = start_idle_timer,
+-- })
+-- 
+-- -- Initialize timer when neovim starts
+-- -- start_idle_timer()
+

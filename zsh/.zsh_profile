@@ -4,7 +4,7 @@ export EDITOR="nvim"
 export TERMINAL="ghostty"
 
 alias lg="lazygit"
-alias ld="lazydocker"
+alias lzd="lazydocker"
 alias vi="nvim"
 alias vim="nvim"
 
@@ -26,7 +26,18 @@ alias reload="source ~/.zshrc"
 bindkey -s ^f "_sessionizer\n"
 bindkey -s ^e "yy\n" # yazi
 bindkey -s ^t "yy\n" # yazi
-bindkey -s ^h "_sessionizer $HOME\n" # yazi
+bindkey -s ^h "herdr\n" # yazi
+#
+# Edit command line in $EDITOR (nvim/vim)
+autoload -U edit-command-line
+zle -N edit-command-line
+
+# For vi mode (recommended)
+bindkey -M vicmd v edit-command-line
+
+# Also support Ctrl+X Ctrl+E (works in both modes)
+bindkey '^Xe' edit-command-line
+bindkey '^X^e' edit-command-line
 
 export PATH="$HOME/dotfiles/scripts:$PATH"
 export PATH="$HOME/build/Odin:$PATH"
