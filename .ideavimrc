@@ -1,0 +1,53 @@
+let mapleader=" "
+
+set visualbell
+set noerrorbell
+set relativenumber
+set number
+set scrolloff=8
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set ideajoin
+set ideamarks
+map Q gq
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+imap jk <Esc>
+
+nnoremap <Esc> :nohlsearch<CR>
+
+nmap H :bprev<CR>
+nmap L :bnext<CR>
+
+" Center cursor after scrolling
+nmap <C-d> <C-d>zz
+nmap <C-u> <C-u>zz
+
+" Center cursor after search
+nmap n nzzzv
+nmap N Nzzzv
+
+nmap K <Action>(ShowHoverInfo)
+nmap gd <Action>(GotoDeclaration)
+nmap gD <Action>(GotoTypeDeclaration)
+nmap gi <Action>(GotoImplementation)
+nmap gr <Action>(FindUsages)
+nmap gl <Action>(QuickImplementations)
+
+nmap ]e <Action>(GotoNextError)
+nmap [e <Action>(GotoPreviousError)
+
+vmap J <Action>(MoveLineDown)
+vmap K <Action>(MoveLineUp)
+vmap > <Action>(EditorIndentSelection)
+vmap < <Action>(EditorUnindentSelection)
+
+map <leader><leader> <Action>(Switcher)
+map <leader>fd <Action>(GotoFile)
+

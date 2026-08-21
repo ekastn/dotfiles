@@ -6,7 +6,6 @@ return {
     "eandrju/cellular-automaton.nvim",
 
     "tikhomirov/vim-glsl",
-    -- "github/copilot.vim",
 
 
     {
@@ -132,12 +131,5 @@ return {
     {
         "stevearc/dressing.nvim",
         event = "VeryLazy",
-    },
-
-    {
-        "norcalli/nvim-colorizer.lua",
-        config = function()
-            require("colorizer").setup()
-        end,
     },
 }

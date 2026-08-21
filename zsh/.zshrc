@@ -110,6 +110,11 @@ autoload -U compinit
 compinit -i
 
 source <(fzf --zsh)
+eval "$(atuin init zsh --disable-up-arrow)"
+eval "$(task --completion zsh)"
+eval "$(zoxide init zsh)"
+
+. "$HOME/.atuin/bin/env"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -118,12 +123,6 @@ export NVM_DIR="$HOME/.nvm"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
-
-. "$HOME/.atuin/bin/env"
-
-eval "$(atuin init zsh --disable-up-arrow)"
-
-eval "$(task --completion zsh)"
 
 # bun completions
 [ -s "/home/fzymorn/.bun/_bun" ] && source "/home/fzymorn/.bun/_bun"
@@ -135,6 +134,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # opencode
 export PATH=/home/fzymorn/.opencode/bin:$PATH
 
-# >>> oh-my-opencode-slim background subagents >>>
-export OPENCODE_EXPERIMENTAL_BACKGROUND_SUBAGENTS=true
-# <<< oh-my-opencode-slim background subagents <<<
+# >>> grok installer >>>
+export PATH="$HOME/.grok/bin:$PATH"
+fpath=(~/.grok/completions/zsh $fpath)
+autoload -Uz compinit && compinit -C
