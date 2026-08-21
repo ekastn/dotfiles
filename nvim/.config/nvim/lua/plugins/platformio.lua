@@ -1,5 +1,6 @@
 return {
     "anurag3301/nvim-platformio.lua",
+    enabled = false,
 
     -- optional: cond used to enable/disable platformio
     -- based on existance of platformio.ini file and .pio folder in cwd.
