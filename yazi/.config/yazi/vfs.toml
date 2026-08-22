@@ -1,0 +1,4 @@
+[sftp.homelab]
+host = "azkabun"
+user = "malfoy"
+port = 2022

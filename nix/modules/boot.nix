@@ -7,12 +7,14 @@
     enable = true;
     efiSupport = true;
     device = "nodev";
-    fontSize = 32;
+    font = "${pkgs.hack-font}/share/fonts/truetype/Hack-Regular.ttf";
+    fontSize = 28;
+    gfxmodeEfi = "1280x720";
   };
 
   console = {
     earlySetup = true;
-    font = "ter-v24n";
+    font = "ter-v20n";
     packages = with pkgs; [ terminus_font ];
   };
 

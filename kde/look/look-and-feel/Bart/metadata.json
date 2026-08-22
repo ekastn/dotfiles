@@ -1,0 +1,33 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "gicalucejo@gmail.com",
+                "Name": "jomada"
+            }
+        ],
+        "Category": "Global Themes (Plasma 6)",
+        "ServiceTypes": [
+            "Plasma/LookAndFeel"
+        ],
+        "Description": "Bart Desktop Design",
+        "Id": "Bart",
+        "Version": "1.2",
+        "License": "GPL 3+",
+        "Name": "Bart",
+        "Website": "https://seduccionlinux.wordpress.com",
+        "Keywords": "Desktop;Workspace;Appearance;Look and Feel;",
+        "X-Plasma-APIVersion": "2",
+        "X-Plasma-MainScript": "default"
+    },
+     "X-KPackage-Dependencies": [
+        "kns://colorschemes.knsrc/api.kde-look.org/2324911",
+        "kns://plasma-themes.knsrc/api.kde-look.org/2324914",
+        "kns://aurorae.knsrc/api.kde-look.org/2324913",
+        "kns://icons.knsrc/api.kde-look.org/1661983",
+        "kns://xcursor.knsrc/api.kde-look.org/1411743",
+        "kns://wallpaper.knsrc/api.kde-look.org/2324909",
+        "kns://wallpaper.knsrc/api.kde-look.org/2324908"
+    ]
+}
