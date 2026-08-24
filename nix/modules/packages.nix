@@ -51,6 +51,7 @@
     gearlever
     mangohud
     mesa-demos
+    spotify
 
     gcc
     cmake
