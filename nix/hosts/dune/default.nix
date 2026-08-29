@@ -12,6 +12,7 @@
     ../../modules/system.nix
     ../../modules/packages.nix
     ../../modules/fonts.nix
+    ../../modules/virtualization.nix
   ];
 
   networking.hostName = "dune";
@@ -21,7 +22,7 @@
   users.users."heaven" = {
     isNormalUser = true;
     description = "heaven";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" "docker" "libvirtd" ];
     shell = pkgs.zsh;
   };
 

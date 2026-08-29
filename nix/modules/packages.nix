@@ -1,8 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  programs.kdeconnect.enable = true;
+
   environment.systemPackages = with pkgs; [
-    vim
+    # Browsers
     (chromium.override {
       commandLineArgs = [
         "--ozone-platform-hint=auto"
@@ -13,46 +15,57 @@
         "--ozone-platform-hint=auto"
       ];
     })
+
+    # CLI tools
     curl
     wget
     git
     tmux
     pciutils
     usbutils
+    rsync
+    stow
+    tree
+    graphviz
+
+    # File & archives
     unzip
     zip
     p7zip
+    zstd
+    gzip
     imagemagick
     ffmpeg-full
-    ghostty
+    pandoc
+
+    # Terminal & editor
+    vim
     neovim
+    ghostty
     fzf
     ripgrep
     jq
     zoxide
-    rsync
-    zstd
-    gzip
-    go-task
-    tree-sitter
-
     yazi
-    stow
     btop
     fastfetch
-    tree
-    pandoc
+    lazygit
+    atuin
+    go-task
+    tree-sitter
+    fd
+
+    # Desktop apps
     audacity
     gimp3
     inkscape
     onlyoffice-desktopeditors
-    lazygit
-    atuin
+    spotify
     gearlever
     mangohud
     mesa-demos
-    spotify
 
+    # Dev toolchain
     gcc
     cmake
     gnumake
@@ -63,14 +76,23 @@
     gnupg
     pass
     pinentry-qt
+    goose
+    sqlc
 
+    # Languages & runtimes
     uv
     nodejs
+    pnpm
     bun
     go
     rustc
     cargo
     rustfmt
+    jdk21
+    maven
+    gradle
+
+    # Network
     nmap
   ];
 }
