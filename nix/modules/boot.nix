@@ -12,6 +12,8 @@
     gfxmodeEfi = "1280x720";
   };
 
+  boot.supportedFilesystems = [ "ntfs" ];
+
   console = {
     earlySetup = true;
     font = "ter-v20n";

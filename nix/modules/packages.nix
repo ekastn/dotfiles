@@ -2,6 +2,7 @@
 
 {
   programs.kdeconnect.enable = true;
+  programs.partition-manager.enable = true;
 
   environment.systemPackages = with pkgs; [
     # Browsers
@@ -37,6 +38,7 @@
     imagemagick
     ffmpeg-full
     pandoc
+    ntfs3g
 
     # Terminal & editor
     vim
