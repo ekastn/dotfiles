@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  programs.codexDesktopLinux.enable = true;
+
   programs.kdeconnect.enable = true;
   programs.partition-manager.enable = true;
 
@@ -28,6 +30,10 @@
     stow
     tree
     graphviz
+    psmisc
+    lsof
+    file
+    bat
 
     # File & archives
     unzip
@@ -80,6 +86,8 @@
     pinentry-qt
     goose
     sqlc
+    devenv
+    direnv
 
     # Languages & runtimes
     uv
