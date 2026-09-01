@@ -33,6 +33,7 @@ CONFIG_FILES=(
   baloofilerc
   kded6rc
   plasmarc
+  plasmashellrc
   plasma-org.kde.plasma.desktop-appletsrc
 )
 
@@ -91,6 +92,13 @@ sanitize() {
         /^\[Wallpapers\]/ { inwalls = 1; next }
         !inwalls { print }
       '
+      ;;
+    plasmashellrc)
+      # Keep the per-panel view settings (visibility, thickness, floating),
+      # drop the [Updates] marker list (machine-specific store paths).
+      awk '/^\[Updates\]/ { skip = 1; next }
+           /^\[/ { skip = 0 }
+           !skip { print }'
       ;;
     plasma-org.kde.plasma.desktop-appletsrc)
       # Keep panel/widget structure + settings, drop machine-specific refs:

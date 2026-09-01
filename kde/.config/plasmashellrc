@@ -1,0 +1,20 @@
+[PlasmaViews][Panel 48]
+alignment=132
+floating=0
+floatingApplets=1
+panelLengthMode=0
+panelOpacity=1
+panelVisibility=0
+
+[PlasmaViews][Panel 48][Defaults]
+thickness=32
+
+[PlasmaViews][Panel 78]
+floating=1
+panelLengthMode=1
+panelOpacity=1
+panelVisibility=2
+
+[PlasmaViews][Panel 78][Defaults]
+thickness=40
+

@@ -89,6 +89,10 @@ plugin=org.kde.plasma.weather
 immutability=1
 plugin=org.kde.plasma.keyboardindicator
 
+[Containments][48][Applets][53][Applets][66]
+immutability=1
+plugin=org.kde.kscreen
+
 [Containments][48][Applets][53][Applets][68]
 immutability=1
 plugin=org.kde.plasma.brightness

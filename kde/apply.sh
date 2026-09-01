@@ -31,6 +31,7 @@ CONFIG_FILES=(
   baloofilerc
   kded6rc
   plasmarc
+  plasmashellrc
   plasma-org.kde.plasma.desktop-appletsrc
 )
 
