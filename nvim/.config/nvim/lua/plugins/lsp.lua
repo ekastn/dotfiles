@@ -110,7 +110,7 @@ return {
                 },
                 pyright = {},
                 tailwindcss = {},
-                -- ts_ls = {},
+                ts_ls = {},
 
                 -- See `:help lspconfig-all` for a list of all the pre-configured LSPs
                 --
