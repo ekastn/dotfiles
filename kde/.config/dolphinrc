@@ -1,0 +1,19 @@
+[DetailsMode]
+PreviewSize=80
+
+[General]
+OpenExternallyCalledFolderInNewTab=true
+Version=202
+
+[IconsMode]
+PreviewSize=112
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[MainWindow]
+MenuBar=Disabled
+
+[PreviewSettings]
+Plugins=audiothumbnail,svgthumbnail,windowsexethumbnail,imagethumbnail,windowsimagethumbnail,jpegthumbnail,exrthumbnail,kraorathumbnail,opendocumentthumbnail,cursorthumbnail,appimagethumbnail,djvuthumbnail,comicbookthumbnail,directorythumbnail,ebookthumbnail,fontthumbnail,blenderthumbnail,mobithumbnail,gsthumbnail,rawthumbnail,ffmpegthumbs

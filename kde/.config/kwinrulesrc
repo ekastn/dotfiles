@@ -1,0 +1,11 @@
+[449b84a5-3140-4116-9822-56107f6700e9]
+Description=Remove Title Bar
+noborder=true
+noborderrule=2
+wmclass=.*
+wmclasscomplete=true
+wmclassmatch=3
+
+[General]
+count=1
+rules=449b84a5-3140-4116-9822-56107f6700e9

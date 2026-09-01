@@ -1,0 +1,5 @@
+[Added Associations]
+x-scheme-handler/codex=chatgpt.desktop
+
+[Default Applications]
+x-scheme-handler/codex=chatgpt.desktop

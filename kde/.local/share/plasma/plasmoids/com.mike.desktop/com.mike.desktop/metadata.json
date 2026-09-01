@@ -1,0 +1,29 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "michaelqhdez@gmail.com",
+                "Name": "MikeDevQH"
+            }
+        ],
+        "Category": "Windows & Tasks",
+        "Description": "A highly configurable virtual desktop pager for Plasma 6 with three visual styles: Pills, Numbers, and Labels. Each style supports full color customization, seamless system color integration, opacity, spacing, corner radius, and mouse wheel scroll support to quickly switch desktops.",
+        "Description[es]": "Paginador de escritorios virtuales altamente configurable para Plasma 6 con tres estilos visuales: Pills, Numbers y Labels. Cada estilo ofrece personalización completa de colores, integración con los colores del sistema, opacidad, espaciado, radio de esquinas, y soporte de scroll del ratón para cambiar rápidamente de escritorio.",
+        "Description[fr]": "Pagineur de bureaux virtuels hautement configurable pour Plasma 6 avec trois styles visuels : Pills, Numbers, et Labels. Chaque style offre une personnalisation complète des couleurs, une intégration aux couleurs du système, de l'opacité, de l'espacement, du rayon des coins, et la prise en charge de la molette de la souris pour changer rapidement de bureau.",
+        "Description[de]": "Ein hochkonfigurierbarer Pager für virtuelle Arbeitsflächen für Plasma 6 mit drei visuellen Stilen: Pills, Numbers und Labels. Jeder Stil bietet vollständige Anpassung von Farben, Systemfarben-Integration, Deckkraft, Abständen, Eckenradius und Mausrad-Unterstützung zum schnellen Wechseln der Arbeitsflächen.",
+        "Icon": "virtual-desktops",
+        "Id": "com.mike.desktop",
+        "License": "GPLv3",
+        "Name": "Mike Desktop",
+        "Name[es]": "Mike Desktop",
+        "Name[fr]": "Mike Desktop",
+        "Name[de]": "Mike Desktop",
+        "Version": "1.3.0",
+        "Website": ""
+    },
+    "KPackageStructure": "Plasma/Applet",
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-Provides": [
+        "org.kde.plasma.virtualdesktops"
+    ]
+}
