@@ -8,8 +8,10 @@ RightButton;NoModifier=org.kde.contextmenu
 plugin=org.kde.plasma.bluetooth
 
 [Containments][48]
+activityId=
 formfactor=2
 immutability=1
+lastScreen=0
 location=3
 plugin=org.kde.panel
 wallpaperplugin=org.kde.image
@@ -32,8 +34,10 @@ immutability=1
 plugin=org.kde.plasma.marginsseparator
 
 [Containments][48][Applets][53]
+activityId=
 formfactor=0
 immutability=1
+lastScreen=-1
 location=0
 plugin=org.kde.plasma.systemtray
 wallpaperplugin=org.kde.image
@@ -208,8 +212,10 @@ numShowBorder=false
 AppletOrder=49;83;76;82;52;53;72;66;71
 
 [Containments][77]
+activityId=2cdbe3c9-0ab9-4073-96fe-d706fdc4cffc
 formfactor=0
 immutability=1
+lastScreen=0
 location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image
@@ -217,8 +223,10 @@ wallpaperplugin=org.kde.image
 [Containments][77][Wallpaper][org.kde.image][General]
 
 [Containments][78]
+activityId=
 formfactor=2
 immutability=1
+lastScreen=0
 location=4
 plugin=org.kde.panel
 wallpaperplugin=org.kde.image
@@ -239,8 +247,10 @@ sortingStrategy=2
 AppletOrder=79
 
 [Containments][80]
+activityId=2cdbe3c9-0ab9-4073-96fe-d706fdc4cffc
 formfactor=0
 immutability=1
+lastScreen=0
 location=0
 plugin=org.kde.plasma.folder
 wallpaperplugin=org.kde.image

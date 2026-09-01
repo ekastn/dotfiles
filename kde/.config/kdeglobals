@@ -98,7 +98,6 @@ ForegroundVisited=127,140,141
 
 [General]
 BrowserApplication=chromium-browser.desktop
-ColorSchemeHash=404c9c568102723de6d5694e4902840a6a5076c6
 UseSystemBell=true
 XftAntialias=true
 XftHintStyle=hintslight

@@ -101,12 +101,16 @@ sanitize() {
            !skip { print }'
       ;;
     plasma-org.kde.plasma.desktop-appletsrc)
-      # Keep panel/widget structure + settings, drop machine-specific refs:
-      # screen/activity/resolution mapping, panel geometry caches, wallpaper paths.
+      # Keep panel/widget structure + settings and the activity/screen
+      # assignment (needed for panels to bind to a screen); drop only
+      # resolution-specific caches, dialog geometry, and wallpaper paths.
       awk '
         /^\[ScreenMapping\]/ { inmap = 1; next }
         inmap { next }
-        /^(activityId|lastScreen|popupHeight|popupWidth|DialogHeight|DialogWidth|ItemGeometries)/ { next }
+        /^\[Containments\]\[[0-9]+\]$/ { top = 1; print; next }
+        /^\[/ { top = 0 }
+        top && /^lastScreen=/ { print "lastScreen=0"; next }
+        /^(popupHeight|popupWidth|DialogHeight|DialogWidth|ItemGeometries)/ { next }
         /^Image=/ { next }
         /^SlidePaths=/ { next }
         { print }
@@ -119,8 +123,10 @@ sanitize() {
       sed '/^lastImageSave[^=]*Location=/d'
       ;;
     kdeglobals)
-      # Keep KDE and GTK on the same icon theme.
-      sed 's/^Theme=breeze-dark$/Theme=Papirus/'
+      # Normalize icon theme for both KDE and GTK; drop the machine-derived
+      # colorscheme hash so Plasma recomputes it from the actual installed
+      # scheme on each machine (prevents fallback to Breeze on a fresh box).
+      sed -e 's/^Theme=breeze-dark$/Theme=Papirus/' -e '/^ColorSchemeHash=/d'
       ;;
     *)
       cat
