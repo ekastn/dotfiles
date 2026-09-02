@@ -13,18 +13,13 @@
     ../../modules/packages.nix
     ../../modules/fonts.nix
     ../../modules/virtualization.nix
+    ../../users/test.nix
+    ../../users/heaven.nix
   ];
 
   networking.hostName = "dune";
   time.timeZone = "Asia/Jakarta";
   i18n.defaultLocale = "en_US.UTF-8";
-
-  users.users."heaven" = {
-    isNormalUser = true;
-    description = "heaven";
-    extraGroups = [ "networkmanager" "wheel" "gamemode" "docker" "libvirtd" ];
-    shell = pkgs.zsh;
-  };
 
   system.stateVersion = "26.05";
 }
