@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, antigravity-nix, nixpkgs-unstable, ... }:
 
 {
   programs.codexDesktopLinux.enable = true;
@@ -112,5 +112,8 @@
 
     # Network
     nmap
+
+    # AI tools
+    antigravity-nix.packages.${pkgs.system}.google-antigravity-cli
   ];
 }
