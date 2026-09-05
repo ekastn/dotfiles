@@ -6,6 +6,11 @@
   programs.kdeconnect.enable = true;
   programs.partition-manager.enable = true;
 
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     # Browsers
     (chromium.override {
@@ -19,10 +24,12 @@
       ];
     })
 
+    fio
+    kdiskmark
+
     # CLI tools
     curl
     wget
-    git
     tmux
     pciutils
     usbutils
@@ -58,6 +65,7 @@
     btop
     fastfetch
     lazygit
+    lazydocker
     atuin
     go-task
     tree-sitter

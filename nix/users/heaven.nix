@@ -6,6 +6,5 @@
     description = "heaven";
     extraGroups = [ "networkmanager" "wheel" "gamemode" "docker" "libvirtd" ];
     shell = pkgs.zsh;
-    packages = [ pkgs.starship ];
   };
 }
