@@ -171,6 +171,7 @@ power/54414/chargePercentage=B
 
 [Containments][48][Applets][72][Configuration][Sensors]
 highPrioritySensorIds=["power/54414/chargePercentage","disk/all/usedPercent","cpu/all/averageTemperature","cpu/all/usage","memory/physical/used"]
+lowPrioritySensorIds=["os/system/uptime","os/system/prettyName","gpu/all/totalVram","gpu/all/usage","gpu/all/usedVram","network/all/uploadBits","network/all/downloadBits","disk/all/total","disk/all/used","disk/all/free"]
 
 [Containments][48][Applets][76]
 immutability=1

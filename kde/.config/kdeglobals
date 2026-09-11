@@ -113,6 +113,7 @@ Theme=Papirus
 
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
+ShowDeleteCommand=false
 contrast=4
 frameContrast=0.2
 
@@ -132,6 +133,9 @@ Sort hidden files last=false
 Sort reversed=false
 Speedbar Width=140
 View Style=DetailTree
+
+[KShortcutsDialog Settings]
+Dialog Size=600,480
 
 [PreviewSettings]
 EnableRemoteFolderThumbnail=false

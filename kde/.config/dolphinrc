@@ -17,3 +17,6 @@ MenuBar=Disabled
 
 [PreviewSettings]
 Plugins=audiothumbnail,svgthumbnail,windowsexethumbnail,imagethumbnail,windowsimagethumbnail,jpegthumbnail,exrthumbnail,kraorathumbnail,opendocumentthumbnail,cursorthumbnail,appimagethumbnail,djvuthumbnail,comicbookthumbnail,directorythumbnail,ebookthumbnail,fontthumbnail,blenderthumbnail,mobithumbnail,gsthumbnail,rawthumbnail,ffmpegthumbs
+
+[VersionControl]
+enabledPlugins=Git

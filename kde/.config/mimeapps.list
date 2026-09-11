@@ -1,5 +1,9 @@
 [Added Associations]
 x-scheme-handler/codex=codex-desktop.desktop;chatgpt.desktop;
+x-scheme-handler/http=vivaldi-stable.desktop;
+x-scheme-handler/https=vivaldi-stable.desktop;
 
 [Default Applications]
 x-scheme-handler/codex=codex-desktop.desktop
+x-scheme-handler/http=vivaldi-stable.desktop;
+x-scheme-handler/https=vivaldi-stable.desktop;

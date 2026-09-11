@@ -3,6 +3,7 @@ DimDisplayIdleTimeoutSec=1800
 TurnOffDisplayIdleTimeoutSec=2400
 
 [AC][SuspendAndShutdown]
+AutoSuspendAction=0
 AutoSuspendIdleTimeoutSec=1800
 InhibitLidActionWhenExternalMonitorPresent=false
 
@@ -17,6 +18,9 @@ InhibitLidActionWhenExternalMonitorPresent=false
 [BatteryManagement]
 BatteryCriticalLevel=10
 BatteryLowLevel=20
+
+[General]
+pausePlayersOnSuspend=false
 
 [LowBattery][SuspendAndShutdown]
 InhibitLidActionWhenExternalMonitorPresent=false

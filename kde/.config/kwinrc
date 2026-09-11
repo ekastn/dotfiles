@@ -9,7 +9,8 @@ BorderActivate=9
 MouseTracking=2
 
 [NightColor]
-NightTemperature=3400
+Mode=Constant
+NightTemperature=4400
 
 [Plugins]
 blurEnabled=false
