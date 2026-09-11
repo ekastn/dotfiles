@@ -52,6 +52,7 @@
     ffmpeg-full
     pandoc
     ntfs3g
+    zathura
 
     # Terminal & editor
     vim
@@ -70,6 +71,7 @@
     go-task
     tree-sitter
     fd
+    gh
 
     # Desktop apps
     audacity
@@ -96,6 +98,9 @@
     sqlc
     devenv
     direnv
+
+    # Postgres client (psql, pg_dump) — server only runs with services.postgresql.enable
+    postgresql
 
     # Languages & runtimes
     uv
