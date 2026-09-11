@@ -61,7 +61,7 @@ auto_switch = false
 # Named punctuation such as minus, comma, ampersand, plus, and backtick is also accepted.
 # Most reliable direct bindings are ctrl+letter, function keys, and explicit modified chords.
 # alt+..., cmd/super, and punctuation-with-modifiers may depend on your terminal/tmux setup.
-prefix = "ctrl+s"
+prefix = "ctrl+b"
 
 # Prefix-mode actions
 # help = "prefix+?"
@@ -69,8 +69,8 @@ settings = "prefix+shift+s"
 # detach = "prefix+q"
 reload_config = "prefix+r"
 # open_notification_target = "prefix+o"
-# workspace_picker = "prefix+w"
-goto = "prefix+a"
+workspace_picker = "prefix+w"
+goto = "prefix+s"
 # new_workspace = "prefix+shift+n"
 # new_worktree = "prefix+shift+g"
 # open_worktree = ""    # optional, unset by default
@@ -150,6 +150,12 @@ type = "plugin_action"
 command = "nicolegros.herdr-launcher.open"
 description = "project launcher"
 
+[[keys.command]]
+key = "prefix+a"
+type = "plugin_action"
+command = "herdr-navigator.open"
+description = "jump to anything"
+
 # [[keys.command]]
 # key = "prefix+e"
 # type = "pane"
@@ -221,6 +227,21 @@ prompt_new_tab_name = false
 # accent = "cyan"
 
 # Background notification popup delivery
+agent_panel_sort = "priority"
+
+[ui.sidebar.agents]
+row_gap = 1
+
+[ui.sidebar.spaces]
+# --- added by ez-corp.space-usage (removed by `status-disable`) ---
+rows = [
+  ["state_icon", "workspace"],
+  ["branch", "git_status"],
+]
+# --- end ez-corp.space-usage ---
+row_gap = 1
+
+
 [ui.toast]
 # off = disable pop-up notifications
 # herdr = show in-app toasts
@@ -229,6 +250,7 @@ prompt_new_tab_name = false
 # delivery = "off"
 # delay_seconds = 1
 
+delivery = "system"
 [ui.toast.herdr]
 # position = "bottom-right"
 
@@ -266,10 +288,10 @@ prompt_new_tab_name = false
 
 [experimental]
 # Allow launching herdr from inside a herdr-managed pane.
-# allow_nested = false
+allow_nested = true
 # Experimental local Kitty graphics rendering for attached clients.
 # Requires a Kitty graphics-compatible outer terminal.
-kitty_graphics = true
+kitty_graphics = false
 # Save recent pane screen history across full server restarts.
 pane_history = false
 # While prefix mode is active, temporarily switch the macOS host input
