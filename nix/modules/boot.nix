@@ -9,16 +9,16 @@
     device = "nodev";
     font = "${pkgs.hack-font}/share/fonts/truetype/Hack-Regular.ttf";
     fontSize = 28;
-    gfxmodeEfi = "1280x720";
+    # gfxmodeEfi = "1280x720";
   };
 
   boot.supportedFilesystems = [ "ntfs" ];
 
   console = {
     earlySetup = true;
-    font = "ter-v20n";
+    font = "ter-v28n";
     packages = with pkgs; [ terminus_font ];
   };
 
-  systemd.services.systemd-vconsole-setup.unitConfig.After = [ "local-fs.target" ];
+  # systemd.services.systemd-vconsole-setup.unitConfig.After = [ "local-fs.target" ];
 }

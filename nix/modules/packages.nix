@@ -41,6 +41,7 @@
     lsof
     file
     bat
+    kubectl
 
     # File & archives
     unzip
@@ -82,6 +83,7 @@
     gearlever
     mangohud
     mesa-demos
+    obsidian
 
     # Dev toolchain
     gcc
@@ -114,6 +116,7 @@
     jdk21
     maven
     gradle
+    python3
 
     # Network
     nmap
