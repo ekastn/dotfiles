@@ -93,6 +93,16 @@
 
   services.flatpak.enable = true;
 
+  services.locate = {
+    enable = true;
+    package = pkgs.plocate;
+
+    # Optional: how often to update the DB (systemd calendar format)
+    # interval = "02:15";       # default: daily at 2:15 AM
+    # interval = "hourly";
+    # interval = "never";       # disable auto-updates, run manually
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

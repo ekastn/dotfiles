@@ -42,6 +42,8 @@
     file
     bat
     kubectl
+    k9s
+    plantuml
 
     # File & archives
     unzip
@@ -64,6 +66,7 @@
     jq
     zoxide
     yazi
+    ripdrag
     btop
     fastfetch
     lazygit
@@ -75,15 +78,30 @@
     gh
 
     # Desktop apps
-    audacity
+    nixpkgs-unstable.legacyPackages.${pkgs.system}.audacity
+    mpv
     gimp3
     inkscape
     onlyoffice-desktopeditors
     spotify
     gearlever
+    wmctrl
+    kdotool
+    wl-clipboard
     mangohud
     mesa-demos
     obsidian
+    typora
+    (nixpkgs-unstable.legacyPackages.${pkgs.system}.kdePackages.kdenlive.overrideAttrs (old: {
+      qtWrapperArgs = (old.qtWrapperArgs or [ ]) ++ [
+        "--prefix" "LADSPA_PATH" ":" "${pkgs.lib.makeSearchPath "lib/ladspa" [
+          pkgs.ladspaPlugins
+          pkgs.tap-plugins
+          pkgs.caps
+          pkgs.rnnoise-plugin.ladspa
+        ]}"
+      ];
+    }))
 
     # Dev toolchain
     gcc

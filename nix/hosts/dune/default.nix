@@ -8,11 +8,13 @@
     ../../modules/hardware.nix
     ../../modules/audio.nix
     ../../modules/networking.nix
+    ../../modules/ssh.nix
     ../../modules/gaming.nix
     ../../modules/system.nix
     ../../modules/packages.nix
     ../../modules/fonts.nix
     ../../modules/virtualization.nix
+    ../../modules/kanata.nix
     ../../users/test.nix
     ../../users/heaven.nix
   ];

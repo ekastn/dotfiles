@@ -13,6 +13,7 @@
   };
 
   boot.supportedFilesystems = [ "ntfs" ];
+  boot.initrd.systemd.enable = true;
 
   console = {
     earlySetup = true;
