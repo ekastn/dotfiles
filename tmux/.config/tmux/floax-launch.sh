@@ -127,6 +127,9 @@ case "${1:-}" in
 	lazydocker)
 		launch_app "floax-lazydocker" "LazyDocker" "lazydocker"
 		;;
+	workmux)
+		launch_app "floax-workmux" "WorkMux Dashboard" "workmux dashboard"
+		;;
 	*)
 		printf 'usage: %s {atuin|lazygit|lazydocker}\n' "$0" >&2
 		exit 1
