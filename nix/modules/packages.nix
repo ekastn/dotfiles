@@ -1,5 +1,21 @@
 { config, pkgs, antigravity-nix, nixpkgs-unstable, ... }:
 
+let
+  kdenlive-wrapped = pkgs.symlinkJoin {
+    name = "kdenlive";
+    paths = [ nixpkgs-unstable.legacyPackages.${pkgs.system}.kdePackages.kdenlive ];
+    buildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/kdenlive \
+        --prefix LADSPA_PATH : "${pkgs.lib.makeSearchPath "lib/ladspa" [
+          pkgs.ladspaPlugins
+          pkgs.tap-plugins
+          pkgs.caps
+          pkgs.rnnoise-plugin.ladspa
+        ]}"
+    '';
+  };
+in
 {
   programs.codexDesktopLinux.enable = true;
 
@@ -92,16 +108,7 @@
     mesa-demos
     obsidian
     typora
-    (nixpkgs-unstable.legacyPackages.${pkgs.system}.kdePackages.kdenlive.overrideAttrs (old: {
-      qtWrapperArgs = (old.qtWrapperArgs or [ ]) ++ [
-        "--prefix" "LADSPA_PATH" ":" "${pkgs.lib.makeSearchPath "lib/ladspa" [
-          pkgs.ladspaPlugins
-          pkgs.tap-plugins
-          pkgs.caps
-          pkgs.rnnoise-plugin.ladspa
-        ]}"
-      ];
-    }))
+    kdenlive-wrapped
 
     # Dev toolchain
     gcc
