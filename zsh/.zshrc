@@ -14,9 +14,11 @@ autoload -U compinit
 compinit -i
 
 source <(fzf --zsh)
+source <(kubectl completion zsh)
 eval "$(atuin init zsh --disable-up-arrow)"
 eval "$(task --completion zsh)"
 eval "$(zoxide init zsh)"
+eval "$(workmux completions zsh)"
 command -v direnv >/dev/null && eval "$(direnv hook zsh)"
 autoload -Uz compinit && compinit -C
 
