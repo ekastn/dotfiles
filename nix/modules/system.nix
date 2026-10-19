@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
 
 {
+  systemd.settings.Manager.DefaultTimeoutStopSec = "15s";
+  systemd.user.extraConfig = "DefaultTimeoutStopSec=10s";
+  systemd.user.services.xdg-desktop-portal.serviceConfig.TimeoutStopSec = "5s";
+  systemd.user.services.xdg-document-portal.serviceConfig.TimeoutStopSec = "5s";
+
   systemd.services.NetworkManager-wait-online.enable = false;
 
   programs.zsh.enable = true;

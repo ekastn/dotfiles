@@ -3,10 +3,12 @@
 {
   boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.timeout = 2;
   boot.loader.grub = {
     enable = true;
     efiSupport = true;
     device = "nodev";
+    configurationLimit = 10;
     font = "${pkgs.hack-font}/share/fonts/truetype/Hack-Regular.ttf";
     fontSize = 28;
     # gfxmodeEfi = "1280x720";
