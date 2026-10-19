@@ -72,6 +72,9 @@ in
     pandoc
     ntfs3g
     zathura
+    mediainfo
+    flameshot
+    figma-linux
 
     # Terminal & editor
     vim
@@ -95,7 +98,10 @@ in
 
     # Desktop apps
     nixpkgs-unstable.legacyPackages.${pkgs.system}.audacity
+    nixpkgs-unstable.legacyPackages.${pkgs.system}.winboat
+    freerdp
     mpv
+    vlc
     gimp3
     inkscape
     onlyoffice-desktopeditors
@@ -109,6 +115,8 @@ in
     obsidian
     typora
     kdenlive-wrapped
+    davinci-resolve
+    vscode
 
     # Dev toolchain
     gcc
@@ -148,5 +156,6 @@ in
 
     # AI tools
     antigravity-nix.packages.${pkgs.system}.google-antigravity-cli
+    antigravity-nix.packages.${pkgs.system}.default
   ];
 }

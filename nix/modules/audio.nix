@@ -1,6 +1,15 @@
 { config, pkgs, ... }:
 
 {
+  # T480 (ALC257, SSID 17aa:225d): keep internal mic selectable while a
+  # TRRS headset is plugged in. dell-headset-multi disables jack-detect
+  # on the external-mic pins so both inputs stay visible. Revert by
+  # removing this block. Alternatives: headset-mode, headset-mic,
+  # dell-headset4, auto.
+  boot.extraModprobeConfig = ''
+    options snd-hda-intel model=dell-headset-multi
+  '';
+
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

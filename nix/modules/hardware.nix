@@ -14,10 +14,12 @@
     extraPackages = with pkgs; [
       intel-media-driver
       intel-vaapi-driver
+      mesa.opencl
     ];
   };
 
   environment.sessionVariables = {
+    RUSTICL_ENABLE = "iris";
     LIBVA_DRIVER_NAME = "iHD";
   };
 }

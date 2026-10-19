@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   programs.zsh.enable = true;
 
   programs.firefox.enable = true;
