@@ -1,5 +1,9 @@
 export PATH=$HOME/.npm-global/bin:$PATH
 
+# pnpm – manual setup, `pnpm setup` fails on NixOS (read-only /run)
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME/bin:$PNPM_HOME:$PATH"
+
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
