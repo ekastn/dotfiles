@@ -127,11 +127,14 @@ case "${1:-}" in
 	lazydocker)
 		launch_app "floax-lazydocker" "LazyDocker" "lazydocker"
 		;;
-	workmux)
-		launch_app "floax-workmux" "WorkMux Dashboard" "workmux dashboard"
+	gh-dash)
+		launch_app "floax-gh-dash" "gh dash" "gh dash"
+		;;
+	tuicr)
+		launch_app "floax-tuicr" "tuicr" "tuicr"
 		;;
 	*)
-		printf 'usage: %s {atuin|lazygit|lazydocker}\n' "$0" >&2
+		printf 'usage: %s {atuin|lazygit|lazydocker|gh-dash|tuicr}\n' "$0" >&2
 		exit 1
 		;;
 esac
