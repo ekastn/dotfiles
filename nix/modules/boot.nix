@@ -16,6 +16,12 @@
 
   boot.supportedFilesystems = [ "ntfs" ];
   boot.initrd.systemd.enable = true;
+  boot.initrd.systemd.tpm2.enable = true;
+
+  security.tpm2.enable = true;
+
+  boot.initrd.luks.devices."luks-f380ccfc-58ab-42a7-8769-33a16bf49fc7".crypttabExtraOpts = [ "tpm2-device=auto" ];
+  boot.initrd.luks.devices."luks-a90dcfb8-052c-4f9d-9521-e77800c587be".crypttabExtraOpts = [ "tpm2-device=auto" ];
 
   console = {
     earlySetup = true;
