@@ -1,4 +1,4 @@
-{ config, pkgs, antigravity-nix, nixpkgs-unstable, ... }:
+{ config, pkgs, antigravity-nix, nixpkgs-unstable, nixpkgs-master, ... }:
 
 let
   kdenlive-wrapped = pkgs.symlinkJoin {
@@ -58,6 +58,7 @@ in
     kubectl
     k9s
     plantuml
+    google-drive-ocamlfuse
 
     # File & archives
     unzip
@@ -71,8 +72,6 @@ in
     ntfs3g
     zathura
     mediainfo
-    flameshot
-    figma-linux
 
     # Terminal & editor
     vim
@@ -95,6 +94,7 @@ in
     gh
 
     # Desktop apps
+    nixpkgs-master.legacyPackages.${pkgs.system}.t3code
     nixpkgs-unstable.legacyPackages.${pkgs.system}.audacity
     nixpkgs-unstable.legacyPackages.${pkgs.system}.winboat
     freerdp
@@ -137,6 +137,9 @@ in
 
     # Languages & runtimes
     uv
+    # PHP 8.4 for Laravel local dev (markicabs-pos): pgsql/gd/intl on top of defaults
+    (php84.withExtensions ({ enabled, all }: enabled ++ (with all; [ pdo_pgsql pgsql gd intl ])))
+    php84Packages.composer
     nodejs
     pnpm
     bun
