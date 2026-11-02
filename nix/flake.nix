@@ -4,19 +4,19 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    codex-desktop-linux.url = "github:ilysenko/codex-desktop-linux";
+    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
     antigravity-nix = {
       url = "github:jacopone/antigravity-nix";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    codex-desktop-linux.url = "github:ilysenko/codex-desktop-linux";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, codex-desktop-linux, antigravity-nix }: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-master, antigravity-nix, codex-desktop-linux }: {
     nixosConfigurations.dune = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit nixpkgs-unstable antigravity-nix; };
+      specialArgs = { inherit nixpkgs-unstable nixpkgs-master antigravity-nix codex-desktop-linux; };
       modules = [
         ./hosts/dune/default.nix
-        codex-desktop-linux.nixosModules.default
       ];
     };
   };

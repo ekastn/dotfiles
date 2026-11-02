@@ -17,8 +17,6 @@ let
   };
 in
 {
-  programs.codexDesktopLinux.enable = true;
-
   programs.kdeconnect.enable = true;
   programs.partition-manager.enable = true;
 

@@ -15,6 +15,7 @@
     ../../modules/fonts.nix
     ../../modules/virtualization.nix
     ../../modules/kanata.nix
+    ../../modules/codex.nix
     ../../users/test.nix
     ../../users/heaven.nix
   ];
