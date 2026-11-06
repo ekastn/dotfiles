@@ -113,7 +113,6 @@ in
     obsidian
     typora
     kdenlive-wrapped
-    davinci-resolve
     vscode
 
     # Dev toolchain
