@@ -1,4 +1,4 @@
-{ config, pkgs, antigravity-nix, nixpkgs-unstable, nixpkgs-master, ... }:
+{ config, pkgs, antigravity-nix, nixpkgs-unstable, ... }:
 
 let
   kdenlive-wrapped = pkgs.symlinkJoin {
@@ -94,7 +94,7 @@ in
     gh
 
     # Desktop apps
-    nixpkgs-master.legacyPackages.${pkgs.system}.t3code
+    nixpkgs-unstable.legacyPackages.${pkgs.system}.t3code
     nixpkgs-unstable.legacyPackages.${pkgs.system}.audacity
     nixpkgs-unstable.legacyPackages.${pkgs.system}.winboat
     freerdp

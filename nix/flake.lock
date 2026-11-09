@@ -92,22 +92,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-master": {
-      "locked": {
-        "lastModified": 1793651461,
-        "narHash": "sha256-pkF7eUhBtHyK/q6sKmjaXpFTcK+FyNRg99DAa4Ig9Ow=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "99822bd43ecf4e269194c01157ec85ae0bf33d00",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "master",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-unstable": {
       "locked": {
         "lastModified": 1793540411,
@@ -145,7 +129,6 @@
         "antigravity-nix": "antigravity-nix",
         "codex-desktop-linux": "codex-desktop-linux",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }
     },
